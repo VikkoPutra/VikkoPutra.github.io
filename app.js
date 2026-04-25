@@ -96,4 +96,15 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         });
     }
+
+    // 7. About Section "Read More" Toggle
+    const readMoreBtn = document.getElementById('read-more-btn');
+    const moreContent = document.querySelector('.about-more-content');
+    
+    if (readMoreBtn && moreContent) {
+        readMoreBtn.addEventListener('click', () => {
+            const isExpanded = moreContent.classList.toggle('expanded');
+            readMoreBtn.textContent = isExpanded ? 'Read Less' : 'Read More';
+        });
+    }
 });
