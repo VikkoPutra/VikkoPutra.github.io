@@ -357,6 +357,18 @@ img {
     transform: scale(1.05);
 }
 
+.about-text-wrap p {
+    text-align: justify;
+}
+
+.about-more-content {
+    display: block; /* Show on desktop */
+}
+
+.read-more-link {
+    display: none; /* Hide on desktop */
+}
+
 .stats-grid {
     display: grid;
     grid-template-columns: 1fr;
@@ -446,6 +458,7 @@ img {
 .projects-text .section-desc {
     margin-top: 1rem;
     max-width: 400px;
+    text-align: justify;
 }
 
 /* Interactive Image Accordion */
@@ -545,6 +558,7 @@ img {
     color: #e2e8f0;
     font-size: 0.95rem;
     margin-bottom: 1rem;
+    text-align: justify;
 }
 
 .accordion-details .tags {
@@ -764,6 +778,10 @@ img {
     .nav-links, .nav-cta {
         display: none; /* Hide for mobile by default, could be controlled via JS */
     }
+
+    .accordion-wrapper {
+        width: 100%;
+    }
     
     .mobile-menu-btn {
         display: flex;
@@ -789,15 +807,103 @@ img {
     .accordion-container {
         flex-direction: column;
         height: auto;
+        gap: 0.5rem;
     }
 
     .accordion-item {
-        height: 120px;
+        height: 60px; /* Small horizontal bar for inactive */
         flex: none;
+        width: 100%;
+        /* Removed order to keep natural position */
     }
 
-    .accordion-item:hover {
+    /* Inactive items: text is horizontal and centered relative to top */
+    .accordion-item .accordion-title {
+        bottom: auto; /* Override desktop bottom */
+        top: 30px; /* Center of 60px height */
+        left: 50%;
+        transform: translate(-50%, -50%); /* perfectly centered horizontally and vertically */
+        font-size: 1.1rem;
+        width: 90%;
+        text-align: center;
+        white-space: normal;
+        margin: 0;
+    }
+
+    .accordion-item.active, .accordion-item:hover {
         height: 350px;
         flex: none;
+        width: 100%; /* Prevent width jumping from inheriting desktop 400px */
+    }
+
+    /* Active title: centered horizontally, slightly above vertical center for better spacing */
+    .accordion-item.active .accordion-title {
+        bottom: auto;
+        top: 40%; 
+        left: 50%;
+        transform: translate(-50%, -50%); 
+        font-size: 1.5rem;
+    }
+
+    /* Base details positioning for mobile to ensure smooth fade-in without jumps */
+    .accordion-item .accordion-details {
+        bottom: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 90%;
+        text-align: justify;
+        padding: 1rem;
+    }
+
+    .accordion-details .tags {
+        justify-content: center;
+    }
+
+    .skill-badge {
+        padding: 0.25rem 0.5rem;
+        font-size: 0.75rem;
+        border-radius: 2px;
+    }
+
+    .skills-wrapper {
+        gap: 0.3rem;
+        margin-top: 1rem;
+    }
+
+    /* Read More Toggle for About Section */
+    .about-text-wrap {
+        position: relative;
+    }
+
+    .about-more-content {
+        display: block !important;
+        max-height: 50px; /* Show a bit of the next paragraph */
+        overflow: hidden;
+        transition: max-height 0.6s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.6s;
+        position: relative;
+        mask-image: linear-gradient(to bottom, black 0%, transparent 100%);
+        -webkit-mask-image: linear-gradient(to bottom, black 0%, transparent 100%);
+    }
+
+    .about-more-content.expanded {
+        max-height: 1000px;
+        mask-image: none;
+        -webkit-mask-image: none;
+    }
+
+    .read-more-link {
+        display: inline-block;
+        background: none;
+        border: none;
+        color: var(--color-accent-gold);
+        font-weight: 600;
+        cursor: pointer;
+        padding: 0;
+        margin-bottom: 2rem;
+        font-family: var(--font-body);
+        text-decoration: underline;
+        font-size: 0.95rem;
+        position: relative;
+        z-index: 3;
     }
 }
