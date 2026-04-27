@@ -162,17 +162,28 @@ document.addEventListener('DOMContentLoaded', () => {
     };
   
     const resizeCanvas = () => {
-      canvas.width = window.innerWidth;
-      canvas.height = canvas.parentElement.offsetHeight || window.innerHeight;
+      const dpr = Math.min(window.devicePixelRatio || 1, 1.5);
+      canvas.width = window.innerWidth * dpr;
+      canvas.height = (canvas.parentElement.offsetHeight || window.innerHeight) * dpr;
+      canvas.style.width = window.innerWidth + 'px';
+      canvas.style.height = (canvas.parentElement.offsetHeight || window.innerHeight) + 'px';
       gl.viewport(0, 0, canvas.width, canvas.height);
     };
   
-    window.addEventListener('resize', resizeCanvas);
+    let resizeTimer;
+    window.addEventListener('resize', () => {
+        clearTimeout(resizeTimer);
+        resizeTimer = setTimeout(resizeCanvas, 150);
+    }, { passive: true });
     resizeCanvas();
   
     let startTime = Date.now();
+    let animationId;
+    let pausedElapsed = 0;
+    let pauseStart = 0;
+
     const render = () => {
-      const currentTime = (Date.now() - startTime) / 1000;
+      const currentTime = (Date.now() - startTime - pausedElapsed) / 1000;
   
       gl.clearColor(0.0, 0.0, 0.0, 1.0);
       gl.clear(gl.COLOR_BUFFER_BIT);
@@ -194,8 +205,18 @@ document.addEventListener('DOMContentLoaded', () => {
       gl.enableVertexAttribArray(programInfo.attribLocations.vertexPosition);
   
       gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4);
-      requestAnimationFrame(render);
+      animationId = requestAnimationFrame(render);
     };
   
-    requestAnimationFrame(render);
+    document.addEventListener('visibilitychange', () => {
+        if (document.hidden) {
+            cancelAnimationFrame(animationId);
+            pauseStart = Date.now();
+        } else {
+            pausedElapsed += Date.now() - pauseStart;
+            animationId = requestAnimationFrame(render);
+        }
+    });
+
+    animationId = requestAnimationFrame(render);
   });
