@@ -20,7 +20,7 @@
     
     /* Sizes & Spacing */
     --max-width: 1200px;
-    --transition-standard: all 0.4s ease-in-out;
+    --transition-standard: transform 0.4s ease-in-out, box-shadow 0.4s ease-in-out, color 0.3s ease, background-color 0.3s ease, border-color 0.3s ease;
 }
 
 /* Base Styles */
@@ -129,7 +129,6 @@ img {
     box-shadow: 0 10px 15px -3px rgba(0,0,0,0.05);
     border-color: var(--color-slate-dark);
     color: var(--color-slate-dark);
-    font-weight: 600;
 }
 
 .btn-outline {
@@ -236,7 +235,6 @@ img {
     box-shadow: 0 10px 15px -3px rgba(0,0,0,0.05);
     border-color: var(--color-slate-dark);
     color: var(--color-slate-dark);
-    font-weight: 600;
 }
 
 .mobile-menu-btn {
@@ -444,7 +442,6 @@ img {
     box-shadow: 0 10px 15px -3px rgba(0,0,0,0.05);
     border-color: var(--color-slate-dark);
     color: var(--color-slate-dark);
-    font-weight: 600;
 }
 
 /* Projects */
@@ -679,9 +676,17 @@ img {
     cursor: default;
 }
 
+.cert-list li span {
+    display: inline-block;
+    transition: transform 0.4s ease-in-out;
+}
+
 .cert-list li:hover {
-    padding-left: 2rem;
     color: var(--color-accent-gold);
+}
+
+.cert-list li:hover span {
+    transform: translateX(0.5rem);
 }
 
 .cert-list li::before {
@@ -689,11 +694,11 @@ img {
     position: absolute;
     left: 0;
     color: var(--color-accent-gold);
-    transition: var(--transition-standard);
+    transition: transform 0.4s ease-in-out;
 }
 
 .cert-list li:hover::before {
-    left: 0.5rem;
+    transform: translateX(0.5rem);
 }
 
 /* Footer Section */
@@ -711,6 +716,8 @@ img {
 
 .footer-subtitle {
     color: #cbd5e1;
+    max-width: 800px;
+    margin: 0 auto;
 }
 
 .social-links {
