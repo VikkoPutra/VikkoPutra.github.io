@@ -2,34 +2,24 @@ document.addEventListener('DOMContentLoaded', () => {
     // 1. Dynamic Year in Footer
     document.getElementById('year').textContent = new Date().getFullYear();
 
-    // 2. Smooth Scrolling for Navigation Links
-    const anchorLinks = document.querySelectorAll('a[href^="#"]');
-    anchorLinks.forEach(link => {
-        link.addEventListener('click', function(e) {
-            e.preventDefault();
-            const targetId = this.getAttribute('href');
-            if (targetId === '#') return;
-            
-            const targetElement = document.querySelector(targetId);
-            if (targetElement) {
-                targetElement.scrollIntoView({
-                    behavior: 'smooth',
-                    block: 'start'
-                });
-            }
-        });
-    });
+
 
     // 3. Header Scroll Effect
     const header = document.getElementById('navbar');
+    let ticking = false;
     window.addEventListener('scroll', () => {
-        if (window.scrollY > 50) {
-            header.style.boxShadow = '0 4px 6px -1px rgba(0,0,0,0.05)';
-            header.style.padding = '0';
-        } else {
-            header.style.boxShadow = 'none';
+        if (!ticking) {
+            requestAnimationFrame(() => {
+                if (window.scrollY > 50) {
+                    header.style.boxShadow = '0 4px 6px -1px rgba(0,0,0,0.05)';
+                } else {
+                    header.style.boxShadow = 'none';
+                }
+                ticking = false;
+            });
+            ticking = true;
         }
-    });
+    }, { passive: true });
 
     // 4. Scroll Reveal Animation using IntersectionObserver
     const revealElements = document.querySelectorAll('.reveal-up, .reveal-left, .reveal-right');
@@ -72,6 +62,17 @@ document.addEventListener('DOMContentLoaded', () => {
             link.addEventListener('click', () => {
                 document.getElementById('nav-menu').classList.remove('active');
             });
+        });
+
+        // Close menu when clicking outside
+        document.addEventListener('click', (e) => {
+            const navMenu = document.getElementById('nav-menu');
+            const mobileBtn = document.querySelector('.mobile-menu-btn');
+            if (navMenu.classList.contains('active') && 
+                !navMenu.contains(e.target) && 
+                !mobileBtn.contains(e.target)) {
+                navMenu.classList.remove('active');
+            }
         });
     }
 
