@@ -61,26 +61,17 @@ document.addEventListener('DOMContentLoaded', () => {
     
     if(mobileBtn) {
         mobileBtn.addEventListener('click', () => {
-            // Simplified toggle for demonstration, an actual implementation might use a slide-down menu
-            if(navLinks.style.display === 'flex') {
-                navLinks.style.display = 'none';
-                navCta.style.display = 'none';
-            } else {
-                navLinks.style.display = 'flex';
-                navLinks.style.flexDirection = 'column';
-                navLinks.style.position = 'absolute';
-                navLinks.style.top = '80px';
-                navLinks.style.left = '0';
-                navLinks.style.width = '100%';
-                navLinks.style.background = '#fff';
-                navLinks.style.padding = '1rem';
-                navLinks.style.boxShadow = '0 10px 15px -3px rgba(0,0,0,0.1)';
-                
-                navCta.style.display = 'block';
-                navCta.style.position = 'absolute';
-                navCta.style.top = '250px';
-                navCta.style.left = '1rem';
-            }
+            const navMenu = document.getElementById('nav-menu');
+            navMenu.classList.toggle('active');
+            mobileBtn.classList.toggle('active'); // For the hamburger animation if added later
+        });
+        
+        // Close menu when clicking a link
+        const navLinksList = document.querySelectorAll('.nav-links a');
+        navLinksList.forEach(link => {
+            link.addEventListener('click', () => {
+                document.getElementById('nav-menu').classList.remove('active');
+            });
         });
     }
 
