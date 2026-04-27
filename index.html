@@ -11,9 +11,8 @@
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;600;800&display=swap"
-        rel="stylesheet">
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;600;800&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;600;800&display=swap"></noscript>
 
     <!-- Main Style Sheet -->
     <link rel="stylesheet" href="styles.css">
@@ -70,7 +69,7 @@
         <div class="container grid-2-col">
             <div class="about-image-wrap reveal-left">
                 <div class="profile-image-container">
-                    <img src="assets/Profile.png" alt="Vikko Putra" class="profile-photo">
+                    <img src="assets/Profile.png" alt="Vikko Putra" class="profile-photo" width="600" height="750">
                 </div>
             </div>
             <div class="about-text-wrap reveal-right">
@@ -152,7 +151,7 @@
                     <div class="accordion-container" id="project-accordion">
                         <!-- Project 1 -->
                         <article class="accordion-item active"
-                            style="background-image: url('https://images.unsplash.com/photo-1543286386-713bdd548da4?q=80&w=2070&auto=format&fit=crop');">
+                            style="background-image: url('https://images.unsplash.com/photo-1543286386-713bdd548da4?q=75&w=800&auto=format&fit=crop');">
                             <div class="overlay"></div>
                             <span class="accordion-title">Data Transformation</span>
                             <div class="accordion-details">
@@ -164,7 +163,7 @@
 
                         <!-- Project 2 -->
                         <article class="accordion-item"
-                            style="background-image: url('https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2015&auto=format&fit=crop');">
+                            style="background-image: url('https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=75&w=800&auto=format&fit=crop');">
                             <div class="overlay"></div>
                             <span class="accordion-title">Interactive Dashboard</span>
                             <div class="accordion-details">
@@ -176,7 +175,7 @@
 
                         <!-- Project 3 -->
                         <article class="accordion-item"
-                            style="background-image: url('https://images.unsplash.com/photo-1526628953301-3e589a6a8b74?q=80&w=2090&auto=format&fit=crop');">
+                            style="background-image: url('https://images.unsplash.com/photo-1526628953301-3e589a6a8b74?q=75&w=800&auto=format&fit=crop');">
                             <div class="overlay"></div>
                             <span class="accordion-title">Predictive ML Model</span>
                             <div class="accordion-details">
@@ -188,7 +187,7 @@
 
                         <!-- Project 4 -->
                         <article class="accordion-item"
-                            style="background-image: url('https://images.unsplash.com/photo-1677442136019-21780ecad995?q=80&w=2070&auto=format&fit=crop');">
+                            style="background-image: url('https://images.unsplash.com/photo-1677442136019-21780ecad995?q=75&w=800&auto=format&fit=crop');">
                             <div class="overlay"></div>
                             <span class="accordion-title">AI Agent Development</span>
                             <div class="accordion-details">
@@ -260,9 +259,9 @@
                 <h2 class="section-title">Key Certifications</h2>
                 <div class="title-underline"></div>
                 <ul class="cert-list">
-                    <li>Google Advanced Data Analytics Professional Certificate (2024)</li>
-                    <li>Python Essentials by Cisco Professional Certificate (2024)</li>
-                    <li>Kominfo Scholarship - Data Analyst Professional (2024)</li>
+                    <li><span>Google Advanced Data Analytics Professional Certificate (2024)</span></li>
+                    <li><span>Python Essentials by Cisco Professional Certificate (2024)</span></li>
+                    <li><span>Kominfo Scholarship - Data Analyst Professional (2024)</span></li>
                 </ul>
             </div>
         </div>
@@ -272,7 +271,7 @@
     <footer id="contact" class="footer">
         <div class="container text-center reveal-up">
             <h2 class="footer-title">Turning Complexity Into Competitive Edge</h2>
-            <p class="footer-subtitle">Fusing strategic economics, analytical rigor, and AI-driven intelligence to solve complex challenges—empowering smarter decisions and driving measurable impact across operations, growth strategy, and long-term performance.</p>
+            <p class="footer-subtitle">Fusing economics, analytics, and AI to solve complex challenges—empowering smarter decisions and driving measurable impact.</p>
             <div class="footer-cta mt-2">
                 <a href="https://www.linkedin.com/in/vikko-putra/" target="_blank" rel="noopener noreferrer"
                     class="btn btn-primary">Connect on LinkedIn</a>
