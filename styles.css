@@ -200,8 +200,30 @@ img {
 .logo {
     font-size: 1.5rem;
     font-weight: 800;
-    color: var(--color-slate-dark);
     letter-spacing: 1px;
+    display: flex;
+    align-items: center;
+    white-space: nowrap;
+    color: var(--color-slate-dark);
+}
+
+.logo-expand {
+    display: inline-block;
+    max-width: 0;
+    overflow: hidden;
+    vertical-align: bottom;
+    transition: max-width 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.logo-expand-inner {
+    display: inline-block;
+    background: linear-gradient(90deg, var(--color-slate-dark) 0%, var(--color-accent-gold) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.logo:hover .logo-expand {
+    max-width: 65px;
 }
 
 .logo .dot {
