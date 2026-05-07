@@ -219,6 +219,7 @@ img {
     display: inline-block;
     background: linear-gradient(90deg, var(--color-slate-dark) 0%, var(--color-accent-gold) 100%);
     -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
