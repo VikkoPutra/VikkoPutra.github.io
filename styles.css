@@ -487,6 +487,13 @@ img {
     text-align: justify;
 }
 
+.projects-actions {
+    display: flex;
+    gap: 1rem;
+    margin-top: 3rem;
+    flex-wrap: wrap; /* Default desktop behavior */
+}
+
 /* Interactive Image Accordion */
 .accordion-wrapper {
     flex: 1;
@@ -889,6 +896,20 @@ img {
 
     .projects-text .section-desc {
         max-width: 100%;
+    }
+
+    .projects-actions {
+        flex-wrap: nowrap; /* Force horizontal */
+        justify-content: center;
+        gap: 0.75rem; /* Slightly smaller gap to save space */
+    }
+
+    .projects-actions .btn {
+        padding: 0.7rem 1.2rem; /* Slimmer buttons on mobile */
+        font-size: 0.9rem; /* Slightly smaller text */
+        white-space: nowrap; /* Prevent text wrapping inside buttons */
+        flex: 1; /* Allow them to grow/shrink equally */
+        max-width: 180px; /* Limit max width */
     }
 
     .accordion-container {
