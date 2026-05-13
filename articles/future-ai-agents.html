@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Future of Autonomous AI Agents | Vikko Putra</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;600;800&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;600;800&display=swap"></noscript>
+
+    <!-- Main Style Sheet -->
+    <link rel="stylesheet" href="../styles.css">
+    
+    <style>
+        .subpage-header {
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-weight: 600;
+            color: var(--color-slate-dark);
+            text-decoration: none;
+            margin-bottom: 2rem;
+            transition: color 0.3s ease;
+        }
+        .back-link:hover {
+            color: var(--color-accent-gold);
+        }
+    </style>
+</head>
+
+<body class="smooth-scroll">
+
+    <!-- Navigation -->
+    <header id="navbar" class="header subpage-header">
+        <div class="container nav-container">
+            <a href="../index.html" class="logo">
+                <span class="logo-base">V</span><span class="logo-expand"><span class="logo-expand-inner">ikko&nbsp;</span></span><span class="logo-base">P</span><span class="logo-expand"><span class="logo-expand-inner">utra</span></span><span class="dot">.</span>
+            </a>
+            <nav id="nav-menu">
+                <ul class="nav-links">
+                    <li><a href="../index.html#about">About</a></li>
+                    <li><a href="../index.html#projects" class="active">Projects</a></li>
+                    <li><a href="../index.html#skills">Skills</a></li>
+                    <li><a href="../index.html#journey">Journey</a></li>
+                </ul>
+                <div class="nav-cta">
+                    <a href="../index.html#contact" class="btn btn-outline">Connect</a>
+                </div>
+            </nav>
+            <!-- Mobile Menu Toggle -->
+            <button class="mobile-menu-btn" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="detail-hero" style="background-image: url('https://images.unsplash.com/photo-1499750310107-5fef28a66643?q=80&w=1600&auto=format&fit=crop');">
+            <div class="container detail-header-content">
+                <a href="../projects/index.html" class="back-link" style="color: #fff;">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+                    Back to Articles & Projects
+                </a>
+                <h1 class="detail-title">The Future of Autonomous AI Agents</h1>
+                <div class="detail-meta">
+                    <span>Medium</span>
+                    <span>AI</span>
+                    <span>Future Tech</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Content Section -->
+        <section class="detail-body">
+            <h2>Introduction</h2>
+            <p>Write your article content here. Discuss how AI is moving from simple chat interfaces to autonomous problem-solvers.</p>
+
+            <h2>The Shift to Autonomy</h2>
+            <p>Explore the technical and strategic differences between conversational AI and agentic workflows. What makes an agent truly autonomous?</p>
+
+            <h2>Enterprise Productivity</h2>
+            <p>Detail the implications for business strategy. How will autonomous agents redefine workflows, resource allocation, and competitive advantage?</p>
+
+            <h2>Looking Ahead</h2>
+            <p>Conclude with your thoughts on the next 3-5 years. What challenges remain, and how should organizations prepare?</p>
+        </section>
+    </main>
+
+    <!-- Contact & Footer Section -->
+    <footer id="contact" class="footer">
+        <div class="container text-center">
+            <h2 class="footer-title">Turning Complexity Into Competitive Edge</h2>
+            <p class="footer-subtitle">Fusing economics, analytics, and AI to solve complex challenges—empowering smarter decisions and driving measurable impact.</p>
+            <div class="footer-cta mt-2">
+                <a href="https://www.linkedin.com/in/vikko-putra/" target="_blank" rel="noopener noreferrer"
+                    class="btn btn-primary">Connect on LinkedIn</a>
+                <a href="../assets/CV - Vikko Putra.pdf" target="_blank" rel="noopener noreferrer"
+                    class="btn btn-outline-white">Download CV</a>
+            </div>
+            <div class="social-links mt-3">
+                <a href="https://github.com/VikkoPutra" target="_blank" rel="noopener noreferrer">GitHub</a>
+                <a href="https://medium.com/@vikkoputra" target="_blank" rel="noopener noreferrer">Medium</a>
+                <a href="https://www.linkedin.com/in/vikko-putra/" target="_blank"
+                    rel="noopener noreferrer">LinkedIn</a>
+                <a href="https://public.tableau.com/app/profile/vikko.putra/vizzes" target="_blank"
+                    rel="noopener noreferrer">Tableau</a>
+            </div>
+            <div class="copyright mt-2">
+                &copy; <span id="year"></span> Vikko Putra. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="../app.js"></script>
+    <script>
+        // Update copyright year
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+</body>
+</html>

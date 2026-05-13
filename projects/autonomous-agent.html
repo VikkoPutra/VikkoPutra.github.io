@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Autonomous AI Agent | Vikko Putra</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;600;800&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;600;800&display=swap"></noscript>
+
+    <!-- Main Style Sheet -->
+    <link rel="stylesheet" href="../styles.css">
+    
+    <style>
+        .subpage-header {
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-weight: 600;
+            color: var(--color-slate-dark);
+            text-decoration: none;
+            margin-bottom: 2rem;
+            transition: color 0.3s ease;
+        }
+        .back-link:hover {
+            color: var(--color-accent-gold);
+        }
+    </style>
+</head>
+
+<body class="smooth-scroll">
+
+    <!-- Navigation -->
+    <header id="navbar" class="header subpage-header">
+        <div class="container nav-container">
+            <a href="../index.html" class="logo">
+                <span class="logo-base">V</span><span class="logo-expand"><span class="logo-expand-inner">ikko&nbsp;</span></span><span class="logo-base">P</span><span class="logo-expand"><span class="logo-expand-inner">utra</span></span><span class="dot">.</span>
+            </a>
+            <nav id="nav-menu">
+                <ul class="nav-links">
+                    <li><a href="../index.html#about">About</a></li>
+                    <li><a href="../index.html#projects" class="active">Projects</a></li>
+                    <li><a href="../index.html#skills">Skills</a></li>
+                    <li><a href="../index.html#journey">Journey</a></li>
+                </ul>
+                <div class="nav-cta">
+                    <a href="../index.html#contact" class="btn btn-outline">Connect</a>
+                </div>
+            </nav>
+            <!-- Mobile Menu Toggle -->
+            <button class="mobile-menu-btn" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="detail-hero" style="background-image: url('https://images.unsplash.com/photo-1677442136019-21780ecad995?q=75&w=1600&auto=format&fit=crop');">
+            <div class="container detail-header-content">
+                <a href="index.html" class="back-link" style="color: #fff;">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+                    Back to All Projects
+                </a>
+                <h1 class="detail-title">Autonomous AI Agent</h1>
+                <div class="detail-meta">
+                    <span>OpenAI</span>
+                    <span>Automation</span>
+                    <span>LLM</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Content Section -->
+        <section class="detail-body">
+            <h2>Overview</h2>
+            <p>Write a brief summary of the autonomous AI agent. What specific tasks was it built to automate, and what is the overarching goal of this custom AI solution?</p>
+
+            <h2>The Challenge</h2>
+            <p>Describe the manual workflows or research bottlenecks that prompted the need for an AI agent. How much time was being lost, or what complexities were difficult to handle manually?</p>
+
+            <h2>The Solution</h2>
+            <p>Detail your approach to developing the AI agent. Explain the prompt architecture and how the agent interacts with external data or APIs.</p>
+            <ul>
+                <li><strong>Workflow Design:</strong> Mapping out the manual processes into an automated flow.</li>
+                <li><strong>LLM Integration:</strong> Leveraging OpenAI models and custom prompt engineering.</li>
+                <li><strong>Execution & Synthesis:</strong> How the agent autonomously gathers data and synthesizes actionable outputs.</li>
+            </ul>
+
+            <h2>Results & Impact</h2>
+            <p>What were the productivity gains? Highlight how the solution enhanced strategic productivity for research and data synthesis processes.</p>
+        </section>
+    </main>
+
+    <!-- Contact & Footer Section -->
+    <footer id="contact" class="footer">
+        <div class="container text-center">
+            <h2 class="footer-title">Turning Complexity Into Competitive Edge</h2>
+            <p class="footer-subtitle">Fusing economics, analytics, and AI to solve complex challenges—empowering smarter decisions and driving measurable impact.</p>
+            <div class="footer-cta mt-2">
+                <a href="https://www.linkedin.com/in/vikko-putra/" target="_blank" rel="noopener noreferrer"
+                    class="btn btn-primary">Connect on LinkedIn</a>
+                <a href="../assets/CV - Vikko Putra.pdf" target="_blank" rel="noopener noreferrer"
+                    class="btn btn-outline-white">Download CV</a>
+            </div>
+            <div class="social-links mt-3">
+                <a href="https://github.com/VikkoPutra" target="_blank" rel="noopener noreferrer">GitHub</a>
+                <a href="https://medium.com/@vikkoputra" target="_blank" rel="noopener noreferrer">Medium</a>
+                <a href="https://www.linkedin.com/in/vikko-putra/" target="_blank"
+                    rel="noopener noreferrer">LinkedIn</a>
+                <a href="https://public.tableau.com/app/profile/vikko.putra/vizzes" target="_blank"
+                    rel="noopener noreferrer">Tableau</a>
+            </div>
+            <div class="copyright mt-2">
+                &copy; <span id="year"></span> Vikko Putra. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="../app.js"></script>
+    <script>
+        // Update copyright year
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+</body>
+</html>
