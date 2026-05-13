@@ -163,10 +163,12 @@ document.addEventListener('DOMContentLoaded', () => {
   
     const resizeCanvas = () => {
       const dpr = Math.min(window.devicePixelRatio || 1, 1.5);
+      // Use clientHeight (stable) instead of innerHeight (unstable on iOS due to browser chrome)
+      const stableHeight = canvas.parentElement.offsetHeight || document.documentElement.clientHeight;
       canvas.width = window.innerWidth * dpr;
-      canvas.height = (canvas.parentElement.offsetHeight || window.innerHeight) * dpr;
+      canvas.height = stableHeight * dpr;
       canvas.style.width = window.innerWidth + 'px';
-      canvas.style.height = (canvas.parentElement.offsetHeight || window.innerHeight) + 'px';
+      canvas.style.height = stableHeight + 'px';
       gl.viewport(0, 0, canvas.width, canvas.height);
     };
   
