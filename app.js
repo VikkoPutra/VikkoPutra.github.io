@@ -6,18 +6,39 @@ document.addEventListener('DOMContentLoaded', () => {
     // 2. Header Scroll Shadow Effect (only transition box-shadow, not all properties)
     const header = document.getElementById('navbar');
     if (header) {
-        let ticking = false;
-        window.addEventListener('scroll', () => {
-            if (!ticking) {
-                requestAnimationFrame(() => {
-                    header.style.boxShadow = window.scrollY > 50
-                        ? '0 4px 6px -1px rgba(0,0,0,0.07)'
-                        : 'none';
-                    ticking = false;
-                });
-                ticking = true;
-            }
-        }, { passive: true });
+        if ('IntersectionObserver' in window) {
+            const sentinel = document.createElement('div');
+            sentinel.className = 'scroll-sentinel';
+            sentinel.style.position = 'absolute';
+            sentinel.style.top = '0';
+            sentinel.style.left = '0';
+            sentinel.style.width = '100%';
+            sentinel.style.height = '50px';
+            sentinel.style.pointerEvents = 'none';
+            sentinel.style.visibility = 'hidden';
+            sentinel.style.zIndex = '-9999';
+            document.body.prepend(sentinel);
+
+            const observer = new IntersectionObserver((entries) => {
+                header.style.boxShadow = !entries[0].isIntersecting
+                    ? '0 4px 6px -1px rgba(0,0,0,0.07)'
+                    : 'none';
+            });
+            observer.observe(sentinel);
+        } else {
+            let ticking = false;
+            window.addEventListener('scroll', () => {
+                if (!ticking) {
+                    requestAnimationFrame(() => {
+                        header.style.boxShadow = window.scrollY > 50
+                            ? '0 4px 6px -1px rgba(0,0,0,0.07)'
+                            : 'none';
+                        ticking = false;
+                    });
+                    ticking = true;
+                }
+            }, { passive: true });
+        }
     }
 
     // 3. Scroll Reveal Animation using IntersectionObserver

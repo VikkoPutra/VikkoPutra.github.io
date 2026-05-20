@@ -514,14 +514,14 @@ img {
     border-radius: 1rem;
     overflow: hidden;
     cursor: pointer;
-    transition: all 0.7s ease-in-out;
+    transition: width 0.6s cubic-bezier(0.25, 1, 0.5, 1), height 0.6s cubic-bezier(0.25, 1, 0.5, 1), box-shadow 0.4s ease;
     width: 60px; /* Inactive width */
     box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     touch-action: manipulation; /* Prevent double-fire on touch */
-    will-change: width; /* GPU layer hint for width animation */
+    will-change: width, height; /* GPU layer hint for dimensions animation */
 }
 
 .accordion-item.active {
@@ -554,7 +554,7 @@ img {
     left: 50%;
     transform: translateX(-50%) rotate(-90deg);
     transform-origin: center center;
-    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: bottom 0.5s cubic-bezier(0.25, 1, 0.5, 1), top 0.5s cubic-bezier(0.25, 1, 0.5, 1), left 0.5s cubic-bezier(0.25, 1, 0.5, 1), font-size 0.5s cubic-bezier(0.25, 1, 0.5, 1), transform 0.5s cubic-bezier(0.25, 1, 0.5, 1);
 }
 
 /* Active State: horizontal, positioned above description */
@@ -664,7 +664,7 @@ img {
     background-color: #fff;
     border: 3px solid var(--color-slate-dark);
     z-index: 2;
-    transition: all 0.3s ease;
+    transition: background-color 0.3s ease, border-color 0.3s ease, transform 0.3s ease;
 }
 
 .timeline-content {
@@ -778,50 +778,46 @@ img {
 
 .reveal-up {
     opacity: 0;
-    transform: translateY(30px);
+    transform: translate3d(0, 30px, 0);
     transition: opacity 0.8s ease-out, transform 0.8s ease-out;
-    will-change: opacity, transform;
 }
 
 .reveal-left {
     opacity: 0;
-    transform: translateX(-30px);
+    transform: translate3d(-30px, 0, 0);
     transition: opacity 0.8s ease-out, transform 0.8s ease-out;
-    will-change: opacity, transform;
 }
 
 .reveal-right {
     opacity: 0;
-    transform: translateX(30px);
+    transform: translate3d(30px, 0, 0);
     transition: opacity 0.8s ease-out, transform 0.8s ease-out;
-    will-change: opacity, transform;
 }
 
 .reveal-active {
     opacity: 1;
-    transform: translate(0);
-    will-change: auto; /* Release GPU layer after animation */
+    transform: translate3d(0, 0, 0);
 }
 
 @keyframes fadeInUp {
     from {
         opacity: 0;
-        transform: translateY(20px);
+        transform: translate3d(0, 20px, 0);
     }
     to {
         opacity: 1;
-        transform: translateY(0);
+        transform: translate3d(0, 0, 0);
     }
 }
 
 @keyframes fadeInDown {
     from {
         opacity: 0;
-        transform: translateY(-20px);
+        transform: translate3d(0, -20px, 0);
     }
     to {
         opacity: 1;
-        transform: translateY(0);
+        transform: translate3d(0, 0, 0);
     }
 }
 

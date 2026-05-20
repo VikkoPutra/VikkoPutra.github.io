@@ -2,7 +2,14 @@ document.addEventListener('DOMContentLoaded', () => {
     const canvas = document.getElementById('hero-shader');
     if (!canvas) return;
   
-    const gl = canvas.getContext('webgl');
+    const gl = canvas.getContext('webgl', {
+      alpha: false,
+      antialias: false,
+      depth: false,
+      stencil: false,
+      premultipliedAlpha: false,
+      preserveDrawingBuffer: false
+    });
     if (!gl) {
       console.warn('WebGL not supported.');
       return;
@@ -161,13 +168,26 @@ document.addEventListener('DOMContentLoaded', () => {
       },
     };
   
-    const resizeCanvas = () => {
+    let lastWidth = window.innerWidth;
+    let lastHeight = (canvas.parentElement ? canvas.parentElement.offsetHeight : 0) || document.documentElement.clientHeight;
+
+    const resizeCanvas = (force = false) => {
+      const currentWidth = window.innerWidth;
+      const stableHeight = (canvas.parentElement ? canvas.parentElement.offsetHeight : 0) || document.documentElement.clientHeight;
+      
+      // On mobile, keyboard toggle or address bar show/hide fires resize.
+      // If width hasn't changed, and height change is small (<120px), skip resizing to avoid lag.
+      if (!force && currentWidth === lastWidth && Math.abs(stableHeight - lastHeight) < 120) {
+        return;
+      }
+      
+      lastWidth = currentWidth;
+      lastHeight = stableHeight;
+      
       const dpr = Math.min(window.devicePixelRatio || 1, 1.5);
-      // Use clientHeight (stable) instead of innerHeight (unstable on iOS due to browser chrome)
-      const stableHeight = canvas.parentElement.offsetHeight || document.documentElement.clientHeight;
-      canvas.width = window.innerWidth * dpr;
+      canvas.width = currentWidth * dpr;
       canvas.height = stableHeight * dpr;
-      canvas.style.width = window.innerWidth + 'px';
+      canvas.style.width = currentWidth + 'px';
       canvas.style.height = stableHeight + 'px';
       gl.viewport(0, 0, canvas.width, canvas.height);
     };
@@ -175,16 +195,39 @@ document.addEventListener('DOMContentLoaded', () => {
     let resizeTimer;
     window.addEventListener('resize', () => {
         clearTimeout(resizeTimer);
-        resizeTimer = setTimeout(resizeCanvas, 150);
+        resizeTimer = setTimeout(() => resizeCanvas(false), 150);
     }, { passive: true });
-    resizeCanvas();
+    resizeCanvas(true);
   
     let startTime = Date.now();
     let animationId;
     let pausedElapsed = 0;
     let pauseStart = 0;
+    let isVisible = false;
+    let isTabActive = true;
+    let isRendering = false;
 
+    const startLoop = () => {
+      if (!isRendering && isVisible && isTabActive) {
+        isRendering = true;
+        if (pauseStart > 0) {
+          pausedElapsed += Date.now() - pauseStart;
+          pauseStart = 0;
+        }
+        animationId = requestAnimationFrame(render);
+      }
+    };
+
+    const stopLoop = () => {
+      if (isRendering) {
+        cancelAnimationFrame(animationId);
+        isRendering = false;
+        pauseStart = Date.now();
+      }
+    };
+  
     const render = () => {
+      if (!isRendering) return;
       const currentTime = (Date.now() - startTime - pausedElapsed) / 1000;
   
       gl.clearColor(0.0, 0.0, 0.0, 1.0);
@@ -211,14 +254,30 @@ document.addEventListener('DOMContentLoaded', () => {
     };
   
     document.addEventListener('visibilitychange', () => {
-        if (document.hidden) {
-            cancelAnimationFrame(animationId);
-            pauseStart = Date.now();
+        isTabActive = !document.hidden;
+        if (isTabActive) {
+            startLoop();
         } else {
-            pausedElapsed += Date.now() - pauseStart;
-            animationId = requestAnimationFrame(render);
+            stopLoop();
         }
     });
 
-    animationId = requestAnimationFrame(render);
+    // Pause rendering when the hero canvas is off-screen
+    const heroSection = document.getElementById('hero');
+    if (heroSection && 'IntersectionObserver' in window) {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          isVisible = entry.isIntersecting;
+          if (isVisible) {
+            startLoop();
+          } else {
+            stopLoop();
+          }
+        });
+      }, { threshold: 0.01 });
+      observer.observe(heroSection);
+    } else {
+      isVisible = true;
+      startLoop();
+    }
   });
