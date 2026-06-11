@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Your Brain on ChatGPT: The Hidden Cost of AI Assistance. Exploring cognitive debt, neural activity drops, and how to build a brain-first AI collaboration model.">
+    <title>Your Brain on ChatGPT: The Hidden Cost of AI Assistance | Vikko Putra</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;600;800&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;600;800&display=swap"></noscript>
+    <link rel="stylesheet" href="../styles.css">
+
+    <style>
+        .subpage-header {
+            background: rgba(255,255,255,0.9);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-weight: 600;
+            color: var(--color-slate-dark);
+            text-decoration: none;
+            margin-bottom: 2rem;
+            transition: color 0.3s ease;
+        }
+        .back-link:hover { color: var(--color-accent-gold); }
+
+        /* Reading Progress Bar */
+        .progress-container {
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%; height: 4px;
+            background: transparent;
+            z-index: 1001;
+        }
+        .progress-bar {
+            height: 100%;
+            background: var(--color-accent-gold);
+            width: 0%;
+            transition: width 0.1s ease;
+        }
+
+        /* Figure Styles */
+        .article-figure {
+            margin: 2.5rem 0;
+            text-align: center;
+        }
+        .article-figure img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 10px 30px rgba(15,23,42,0.08);
+            border: 1px solid rgba(0,0,0,0.05);
+            transition: transform 0.3s ease;
+        }
+        .article-figure img:hover { transform: scale(1.01); }
+        .article-figure figcaption {
+            font-size: 0.88rem;
+            color: #64748b;
+            margin-top: 0.65rem;
+            font-style: italic;
+            font-weight: 500;
+        }
+    </style>
+</head>
+
+<body class="smooth-scroll">
+    <div class="progress-container">
+        <div class="progress-bar" id="reading-progress"></div>
+    </div>
+
+    <!-- Navigation -->
+    <header id="navbar" class="header subpage-header">
+        <div class="container nav-container">
+            <a href="../index.html" class="logo">
+                <span class="logo-base">V</span><span class="logo-expand"><span class="logo-expand-inner">ikko&nbsp;</span></span><span class="logo-base">P</span><span class="logo-expand"><span class="logo-expand-inner">utra</span></span><span class="dot">.</span>
+            </a>
+            <nav id="nav-menu">
+                <ul class="nav-links">
+                    <li><a href="../index.html#about">About</a></li>
+                    <li><a href="../projects/index.html" class="active">Projects</a></li>
+                    <li><a href="../index.html#skills">Skills</a></li>
+                    <li><a href="../index.html#journey">Journey</a></li>
+                </ul>
+                <div class="nav-cta">
+                    <a href="../index.html#contact" class="btn btn-outline">Connect</a>
+                </div>
+            </nav>
+            <button class="mobile-menu-btn" aria-label="Toggle menu">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero -->
+        <section class="detail-hero" style="background-image: url('https://images.unsplash.com/photo-1620712943543-bcc4688e7485?q=80&w=1600&auto=format&fit=crop');">
+            <div class="container detail-header-content">
+                <a href="../projects/index.html" class="back-link" style="color:#fff;">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+                    Back to Articles &amp; Projects
+                </a>
+                <h1 class="detail-title">Your Brain on ChatGPT: The Hidden Cost of AI Assistance</h1>
+                <div class="detail-meta">
+                    <span>Medium</span>
+                    <span>AI Research</span>
+                    <span>Digital Cognition</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Article Body -->
+        <section class="detail-body">
+
+            <!-- ── Section 1 ── -->
+            <h2>When Smart People Can't Remember What They Just Wrote</h2>
+            <p>Sarah stares at her laptop screen, having just finished a compelling essay about loyalty with ChatGPT's help. The writing flows beautifully, arguments are structured perfectly, and she feels accomplished. Then the researcher asks a simple question: "Can you quote a sentence from your essay?"</p>
+            <p>Sarah struggles, then admits she can't remember a single line from the work she completed just minutes ago. She isn't alone. At MIT's Media Lab, 83% of students using ChatGPT couldn't accurately quote from their own essays, while those who wrote independently had near-perfect recall.</p>
+            <blockquote>This isn't a story about poor memory. It's the first glimpse into how AI assistance is literally rewiring our brains.</blockquote>
+
+            <!-- ── Section 2 ── -->
+            <h2>The Experiment That Changed Everything</h2>
+            <p>Dr. Nataliya Kosmyna's team at MIT didn't set out to frighten anyone. They simply wanted to understand what happens inside our minds when we collaborate with AI. Over four months, they monitored 54 students from Boston-area universities using advanced brain scanning technology as they wrote essays under three different conditions.</p>
+
+            <!-- Figure 1 — after first paragraph of this section -->
+            <figure class="article-figure">
+                <img src="https://miro.medium.com/v2/resize:fit:1400/format:webp/0*pvdIVf0eWpDFIQxU" alt="Distribution of participants' degrees" loading="lazy">
+                <figcaption>Distribution of participants' degrees</figcaption>
+            </figure>
+
+            <p>The setup was elegantly simple: participants wrote SAT-style essays while their brains were monitored using 32-electrode EEG headsets. One group used only ChatGPT, another used traditional Google searches, and a third relied solely on their own knowledge and memory.</p>
+            <p>What they discovered defied expectations and challenged every assumption about human-AI collaboration.</p>
+
+            <!-- Figure 2 — after "What they discovered..." paragraph -->
+            <figure class="article-figure">
+                <img src="https://miro.medium.com/v2/resize:fit:1400/format:webp/0*xC9WKRmQRq6wCYuS" alt="Distribution of participants' educational background" loading="lazy">
+                <figcaption>Distribution of participants' educational background</figcaption>
+            </figure>
+
+            <!-- ── Subsection: Brain Scans ── -->
+            <h3>The Brain Scans Don't Lie</h3>
+
+            <!-- Figure 3 — immediately after the subsection heading, before the explanation -->
+            <figure class="article-figure">
+                <img src="https://miro.medium.com/v2/resize:fit:1100/format:webp/0*amXQutNeGMCvr-1W" alt="Dynamic Direct Transfer Function (dDTF) — Alpha band connectivity map" loading="lazy">
+                <figcaption>Dynamic Direct Transfer Function (dDTF) — Alpha band connectivity map</figcaption>
+            </figure>
+
+            <p>This brain connectivity map tells a profound story. The red lines represent strong neural connections, blue lines show weaker activity. Notice how the Brain-only group shows intense neural communication across regions, while the ChatGPT group displays dramatically reduced brain activity. The difference isn't subtle — it's a fundamental alteration in how the brain processes information.</p>
+            <p>The alpha band activity, crucial for creative thinking and semantic processing, dropped by up to 55% when students used ChatGPT. These aren't numbers on a spreadsheet — they represent the literal dimming of creative neural networks in real-time.</p>
+
+            <!-- ── Section 3 ── -->
+            <h2>The Memory Catastrophe</h2>
+            <p>The memory findings were even more alarming. When asked to quote from their own work, the results painted a clear picture of cognitive decline.</p>
+
+            <!-- Figure 4 — after the opening paragraph, before the explanation -->
+            <figure class="article-figure">
+                <img src="https://miro.medium.com/v2/resize:fit:1400/format:webp/0*ljLMQOF3urIUr4XK" alt="Recall rate — Percentage of Participants able to quote their own work" loading="lazy">
+                <figcaption>Recall results: Percentage of Participants able to quote their own work</figcaption>
+            </figure>
+
+            <p>These charts reveal something unprecedented in educational research. Students who used ChatGPT couldn't remember their own thoughts, while those who wrote independently or used Google search maintained strong recall abilities. This isn't about multitasking or divided attention — it's about fundamental changes in how information gets encoded in memory.</p>
+            <blockquote>The researchers discovered that when ChatGPT generates initial content, students become editors rather than creators.</blockquote>
+            <p>This shift from generation to modification appears to bypass the deep memory encoding processes that normally occur during original thought.</p>
+
+            <!-- ── Section 4 ── -->
+            <h2>The Ownership Crisis</h2>
+            <p>Perhaps even more troubling was what researchers called the "psychological disengagement" from one's own work. Students using ChatGPT reported feeling disconnected from their essays, with many claiming only partial ownership.</p>
+
+            <!-- Figure 5 — after the opening paragraph, before the quote -->
+            <figure class="article-figure">
+                <img src="https://miro.medium.com/v2/resize:fit:1400/format:webp/0*7lW8vpBBFeRnVg6t" alt="Relative reported percentage of perceived ownership" loading="lazy">
+                <figcaption>Relative reported percentage of perceived ownership</figcaption>
+            </figure>
+
+            <p>"The essay was about 50% mine," explained one participant. "I provided ideas, and ChatGPT helped structure them." Another described their work as having a "soulless" quality despite being technically well-written.</p>
+            <p>Human teachers, experienced in detecting AI-generated content, immediately noticed the difference. They described ChatGPT-assisted essays as having "close to perfect use of language and structure while simultaneously failing to give personal insights or clear statements."</p>
+            <blockquote>The technical quality was there, but something essentially human was missing.</blockquote>
+
+            <!-- ── Section 5 ── -->
+            <h2>The Plot Twist: Timing Changes Everything</h2>
+            <p>Just when the findings seemed entirely negative, Session 4 revealed something remarkable. The researchers flipped the conditions — students who had used ChatGPT were asked to write without AI, while brain-only writers were given access to ChatGPT.</p>
+
+            <!-- Figure 6 — between the Session 4 intro and the results paragraph -->
+            <figure class="article-figure">
+                <img src="https://miro.medium.com/v2/resize:fit:1400/format:webp/0*ARa7E8znzfUel55i" alt="Session 4 condition-flip results: Brain-to-AI vs AI-to-Brain neural activity" loading="lazy">
+                <figcaption>Session 4 results: Brain-to-AI approach showed enhanced neural connectivity</figcaption>
+            </figure>
+
+            <p>The results were striking. Students who developed ideas independently first and then used AI showed enhanced brain connectivity compared to their earlier sessions. This "Brain-to-AI" approach actually amplified cognitive processing rather than diminishing it.</p>
+            <blockquote>AI works best as an enhancement tool, not a replacement for initial human thought processes.</blockquote>
+
+            <!-- ── Section 6 ── -->
+            <h2>The Language Patterns Tell the Story</h2>
+            <p>Advanced natural language processing revealed how profoundly AI assistance altered thinking patterns. The researchers analyzed every essay using sophisticated algorithms to detect patterns invisible to the human eye.</p>
+
+            <!-- Figure 7 — after the intro paragraph, before the heatmap explanation -->
+            <figure class="article-figure">
+                <img src="https://miro.medium.com/v2/resize:fit:1400/format:webp/0*upicJhZv-u3eSpsD" alt="Cosine Similarity heatmap across groups" loading="lazy">
+                <figcaption>Cosine Similarity in Each Group — showing essay homogenization in AI users</figcaption>
+            </figure>
+
+            <p>This heatmap reveals the homogenization effect of AI assistance. The red areas show high similarity between essays, while blue areas indicate diversity. Notice how the ChatGPT group shows much higher similarity — their essays were becoming remarkably alike in structure, vocabulary, and approach.</p>
+            <p>The researchers found consistent patterns across topics:</p>
+            <ul>
+                <li>ChatGPT users employed nearly identical vocabulary and sentence structures</li>
+                <li>Search engine users showed moderate diversity in their approaches</li>
+                <li>Brain-only writers produced the most varied and personalized content</li>
+            </ul>
+            <p>Even more revealing was how AI subtly influenced content framing. When writing about happiness, ChatGPT essays disproportionately focused on "career success," while brain-only essays emphasized "fulfillment and relationships." The AI wasn't just helping with writing — it was shaping what students thought about the topics themselves.</p>
+
+            <!-- ── Section 7 ── -->
+            <h2>The Neural Networks Under Pressure</h2>
+            <p>The EEG analysis revealed that different cognitive processes responded differently to AI assistance across multiple frequency bands, each representing different aspects of brain function.</p>
+
+            <!-- Figure 8 — after the opening paragraph, before the theta-wave description -->
+            <figure class="article-figure">
+                <img src="https://miro.medium.com/v2/resize:fit:1100/format:webp/0*FDASpK9ZQV3YUsXF" alt="Dynamic Direct Transfer Function (dDTF) — Theta band working memory connectivity" loading="lazy">
+                <figcaption>Dynamic Direct Transfer Function (dDTF) — Theta band: working memory &amp; executive control connectivity</figcaption>
+            </figure>
+
+            <p>Theta waves, associated with working memory and executive control, showed dramatic differences. The brain-only group demonstrated intense frontal-to-posterior connectivity, indicating high cognitive load and active coordination of multiple mental processes. The ChatGPT group showed dramatically reduced theta activity, suggesting their working memory and executive functions were largely offloaded to the AI system.</p>
+            <p>This finding has profound implications. Working memory and executive control are foundational to learning, problem-solving, and creative thinking. When these systems are consistently underused, they may begin to atrophy like unused muscles.</p>
+
+            <!-- ── Section 8 ── -->
+            <h2>The Search Engine Sweet Spot</h2>
+            <p>Interestingly, the research revealed that traditional web search occupied a middle ground between AI assistance and independent thinking.</p>
+
+            <!-- Figure 9 — after the opening paragraph, before the explanation -->
+            <figure class="article-figure">
+                <img src="https://miro.medium.com/v2/resize:fit:1138/format:webp/0*BS8aJexAvPeIwgjK" alt="Dynamic Direct Transfer Function (dDTF) — Search engine group neural connectivity" loading="lazy">
+                <figcaption>Dynamic Direct Transfer Function (dDTF) — Search engine group: moderate neural connectivity</figcaption>
+            </figure>
+
+            <p>Students using Google search showed moderate neural connectivity — lower than brain-only thinking but significantly higher than ChatGPT users. This suggests that search engines, which present diverse sources for evaluation, maintain more cognitive engagement than AI systems that provide synthesized answers.</p>
+            <blockquote>The difference lies in the cognitive process: search requires users to evaluate, compare, and synthesize information from multiple sources, while ChatGPT provides ready-made analysis that bypasses these critical thinking steps.</blockquote>
+
+            <!-- ── Section 9 ── -->
+            <h2>The Teacher's Verdict: Something Is Missing</h2>
+            <p>Two experienced English teachers evaluated all essays without knowing which group produced them. Their assessment was telling.</p>
+
+            <!-- Figure 10 — after the opening paragraph, before the AI-vs-human explanation -->
+            <figure class="article-figure">
+                <img src="https://miro.medium.com/v2/resize:fit:1400/format:webp/0*daq9xNrd-PhumAj4" alt="Comparison of AI judge vs human teacher essay scores" loading="lazy">
+                <figcaption>AI judge vs Human teacher scoring comparison</figcaption>
+            </figure>
+
+            <p>While an AI judge rated essays consistently high (clustering around score 4), human teachers were more discerning. They immediately detected what they called a "soulless" quality in many AI-assisted essays. Despite perfect grammar and structure, these essays lacked personal insight, original thinking, and authentic voice.</p>
+            <blockquote>The teachers noted: "These essays included standard ideas, reoccurring typical formulations and statements, which made the use of AI in the writing process rather obvious. We perceived these essays as lacking personal nuances."</blockquote>
+
+            <!-- ── Section 10 ── -->
+            <h2>The Cognitive Debt Accumulates</h2>
+            <p>The researchers introduced a crucial concept: "cognitive debt." Like financial debt, this represents borrowed mental capacity that must eventually be repaid. Every time we offload thinking to AI, we accumulate cognitive debt that impacts our long-term intellectual capabilities.</p>
+
+            <!-- Figure 11 — after the intro paragraph, before the visualization explanation -->
+            <figure class="article-figure">
+                <img src="https://miro.medium.com/v2/resize:fit:1400/format:webp/0*5V88SgQAkYDlDdVm" alt="PaCMAP Distances showing dependency shifts when switching conditions" loading="lazy">
+                <figcaption>PaCMAP Distances — Essay characteristics shift dramatically when students switch conditions</figcaption>
+            </figure>
+
+            <p>This visualization shows how dramatically essays changed when students switched conditions in Session 4. Students who had relied on AI assistance struggled to produce content with the same characteristics as their earlier work, suggesting they had become dependent on the AI's cognitive scaffolding.</p>
+            <p>Dr. Kosmyna warns this isn't debt you can simply "pay off" later. Neural pathways that aren't regularly exercised begin to weaken. Skills that aren't practiced begin to fade. The brain, optimizing for efficiency, reduces capacity in areas where external tools provide support.</p>
+
+            <!-- ── Section 11 ── -->
+            <h2>The Participation Patterns Reveal Dependency</h2>
+            <p>Analysis of how students interacted with ChatGPT revealed concerning patterns of dependency. Initially, students used ChatGPT for specific assistance — grammar checking, structure suggestions, or brainstorming. But over time, many began delegating increasingly fundamental aspects of thinking. By Session 3, some participants were essentially using ChatGPT to write entire essays with minimal personal input.</p>
+            <p>Some participants reflected:</p>
+            <blockquote>"I went back to using ChatGPT because I didn't have enough time, but I feel guilty about it." "It feels like cheating."</blockquote>
+            <p>These emotional responses suggest students intuitively recognized they were avoiding necessary cognitive work.</p>
+
+            <!-- ── Section 12 ── -->
+            <h2>The Neuroscience Behind the Concern</h2>
+            <p>The brain scan patterns align perfectly with established neuroscience research on cognitive load and learning. Theta band activity, which showed the most dramatic differences between groups, is directly linked to working memory capacity and executive control.</p>
+            <p>When we consistently reduce the demands on these systems, we're essentially telling the brain these functions are no longer priority investments. The brain, optimizing for metabolic efficiency, begins to reduce capacity in underused areas.</p>
+            <p>This finding has particularly serious implications for developing minds. The participants in this study were college-age adults with already-established cognitive patterns. For younger students whose brains are still developing, the effects could be even more pronounced and potentially irreversible.</p>
+
+            <!-- ── Section 13 ── -->
+            <h2>The Redemption Path: Strategic AI Integration</h2>
+            <p>Despite the concerning findings, the research points toward a solution. The key insight from Session 4 suggests a "Brain-First" approach to AI collaboration. Here's what the data reveals about effective AI integration:</p>
+            <ul>
+                <li><strong>Start with Independent Thinking:</strong> Always begin cognitively demanding tasks with your own analysis, brainstorming, and initial structuring. This engages the full spectrum of cognitive processes and ensures deep encoding of information.</li>
+                <li><strong>Use AI for Enhancement, Not Generation:</strong> Apply AI tools to refine, expand, or validate ideas you've already developed rather than to generate initial concepts. Think of AI as a sophisticated editor rather than a co-author.</li>
+                <li><strong>Maintain Cognitive Ownership:</strong> Regularly test your understanding and memory of AI-assisted work. If you can't explain or recall the content without the AI, you haven't truly learned it.</li>
+                <li><strong>Practice Cognitive Resistance:</strong> Deliberately engage in unassisted thinking exercises to maintain mental strength. Like physical fitness, cognitive abilities require regular challenging exercise.</li>
+            </ul>
+
+            <!-- ── Section 14 ── -->
+            <h2>The Broader Implications for Knowledge Work</h2>
+            <p>This research has profound implications beyond education. Professional environments increasingly rely on AI assistance for analysis, writing, and decision-making. The same cognitive debt phenomenon likely applies across all knowledge work.</p>
+            <p>The study suggests we're facing a choice between two futures: one where AI augments human capability while preserving cognitive strength, and another where AI gradually replaces human thinking, leaving us cognitively diminished but temporarily more efficient.</p>
+
+            <!-- ── Section 15 ── -->
+            <h2>The Memory Scientists Sound the Alarm</h2>
+            <p>The MIT findings align with broader research on memory and external cognition. The "Google Effect" — our tendency to remember where to find information rather than the information itself — appears dramatically amplified with AI assistance.</p>
+            <p>But this goes beyond simple externalization of memory. The brain scans show we're outsourcing fundamental cognitive processes: analysis, synthesis, creative connection-making, and evaluative thinking. These aren't just memory functions — they're the essence of intelligence itself.</p>
+
+            <!-- ── Section 16 ── -->
+            <h2>What This Means for the Future</h2>
+            <p>The researchers emphasize their findings represent a critical juncture. The decisions we make about AI integration today will shape cognitive capabilities for generations. We're essentially conducting an uncontrolled experiment on human intellectual development.</p>
+            <p>The stakes extend beyond individual performance. If entire populations become cognitively dependent on AI systems:</p>
+            <blockquote>We risk creating vulnerabilities in human knowledge, creativity, and problem-solving capacity that could have far-reaching societal implications.</blockquote>
+
+            <!-- ── Section 17 ── -->
+            <h2>The Call for Conscious Choice</h2>
+            <p>Dr. Kosmyna's research doesn't argue against AI tools — it argues for conscious, strategic use. The brain plasticity demonstrated in Session 4 shows we can adapt and optimize our relationship with AI assistance.</p>
+            <p>The goal isn't to reject AI but to use it in ways that preserve and enhance rather than replace human cognitive capabilities. This requires understanding the difference between cognitive enhancement and cognitive replacement.</p>
+            <ul>
+                <li><strong>For Individuals:</strong> Audit your current AI usage. Are you using these tools to amplify your thinking or avoid it? Experiment with the Brain-to-AI approach in your own work.</li>
+                <li><strong>For Organizations:</strong> Develop AI integration strategies that prioritize long-term cognitive health alongside short-term efficiency gains. Consider the hidden costs of cognitive debt in your workforce.</li>
+                <li><strong>For Educators:</strong> The findings suggest a fundamental rethinking of how AI tools should be integrated into learning environments. The timing and method of introduction may be more important than whether they're used at all.</li>
+            </ul>
+
+            <!-- ── Section 18 ── -->
+            <h2>The Human Brain's Remarkable Response</h2>
+            <p>Perhaps the most hopeful finding is the brain's demonstrated ability to adapt. When students transitioned from AI assistance back to independent thinking, their neural activity didn't remain permanently diminished. While it took time to rebuild full cognitive engagement, the capacity for recovery was clearly present.</p>
+            <p>This neuroplasticity suggests cognitive debt isn't necessarily permanent. With conscious effort and appropriate cognitive exercise, we can rebuild and maintain our intellectual capabilities even in an AI-assisted world.</p>
+
+            <!-- ── Section 19 ── -->
+            <h2>The Choice We Face Today</h2>
+            <p>The MIT study presents a clear choice: We can let AI tools gradually replace our cognitive capabilities, enjoying short-term convenience while accumulating long-term cognitive debt. Or we can consciously develop AI partnerships that preserve and enhance human intelligence.</p>
+            <p>The brain scans don't lie. Every time we outsource fundamental thinking to AI, we're making a trade: immediate efficiency for long-term cognitive capacity. The question isn't whether this trade is happening — the research proves it is. The question is whether we'll make this choice consciously or let it happen by default.</p>
+            <p>The participants in Dr. Kosmyna's study didn't intend to impair their memory or reduce their neural connectivity. They were simply using available tools to complete assigned tasks efficiently. Yet the unintended consequences were profound and measurable.</p>
+            <p>The future of human intelligence isn't predetermined. The MIT research provides a roadmap for preserving cognitive strength while harnessing AI capabilities. But only if we choose to use it.</p>
+            <p>Your brain on ChatGPT doesn't have to mean cognitive decline. With conscious choices about when and how we engage AI assistance, we can create a future where artificial intelligence amplifies rather than replaces human thinking.</p>
+            <blockquote>The question is: What choice will you make?</blockquote>
+
+            <hr style="margin:2.5rem 0;border:0;border-top:1px solid var(--color-border);">
+            <p><strong>Key Research Insights:</strong></p>
+            <ul>
+                <li>83% of ChatGPT users couldn't quote their own essays minutes after writing</li>
+                <li>Brain activity reduced by up to 55% during AI-assisted writing</li>
+                <li>Neural connectivity systematically declined with increased AI dependence</li>
+                <li>Strategic "Brain-First" AI usage enhanced rather than diminished cognitive processing</li>
+                <li>Memory encoding and creative thinking patterns fundamentally altered by AI assistance</li>
+            </ul>
+            <p style="font-size:0.9rem;font-style:italic;color:var(--color-text-muted);">
+                <strong>Primary Research Source:</strong> Kosmyna, N., et al. (2025). "Your Brain on ChatGPT: Accumulation of Cognitive Debt when Using an AI Assistant for Essay Writing Task." MIT Media Lab.
+            </p>
+
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer id="contact" class="footer">
+        <div class="container text-center">
+            <h2 class="footer-title">Turning Complexity Into Competitive Edge</h2>
+            <p class="footer-subtitle">Fusing economics, analytics, and AI to solve complex challenges—empowering smarter decisions and driving measurable impact.</p>
+            <div class="footer-cta mt-2">
+                <a href="https://www.linkedin.com/in/vikko-putra/" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Connect on LinkedIn</a>
+                <a href="../assets/CV - Vikko Putra.pdf" target="_blank" rel="noopener noreferrer" class="btn btn-outline-white">Download CV</a>
+            </div>
+            <div class="social-links mt-3">
+                <a href="https://github.com/VikkoPutra" target="_blank" rel="noopener noreferrer">GitHub</a>
+                <a href="https://medium.com/@vikkoputra" target="_blank" rel="noopener noreferrer">Medium</a>
+                <a href="https://www.linkedin.com/in/vikko-putra/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                <a href="https://public.tableau.com/app/profile/vikko.putra/vizzes" target="_blank" rel="noopener noreferrer">Tableau</a>
+            </div>
+            <div class="copyright mt-2">
+                &copy; <span id="year"></span> Vikko Putra. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <script src="../app.js"></script>
+    <script>
+        const progressBar = document.getElementById('reading-progress');
+        if (progressBar) {
+            const update = () => {
+                const scrollTop = window.scrollY;
+                const docH = document.documentElement.scrollHeight - window.innerHeight;
+                progressBar.style.width = (docH > 0 ? Math.min((scrollTop / docH) * 100, 100) : 0) + '%';
+            };
+            window.addEventListener('scroll', update, { passive: true });
+            update();
+        }
+    </script>
+</body>
+</html>
