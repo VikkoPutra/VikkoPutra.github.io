@@ -12,6 +12,7 @@ export default defineConfig({
         'predictive-model': resolve(__dirname, 'projects/predictive-model.html'),
         'autonomous-agent': resolve(__dirname, 'projects/autonomous-agent.html'),
         'your-brain-on-chatgpt': resolve(__dirname, 'articles/your-brain-on-chatgpt.html'),
+        'the-talent-vs-luck': resolve(__dirname, 'articles/the-talent-vs-luck.html'),
         'future-ai-agents': resolve(__dirname, 'articles/future-ai-agents.html'),
         'executive-dashboards': resolve(__dirname, 'articles/executive-dashboards.html')
       }

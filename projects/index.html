@@ -39,7 +39,33 @@
             transform: translateY(-8px);
             box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
         }
-        .project-card::after {
+
+        /* Live card hover — image overlay only */
+        .project-card:not(.under-construction)::after {
+            content: "Read Article →";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 220px; /* matches .project-image height */
+            background: rgba(15, 23, 42, 0.50);
+            color: #ffffff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.05rem;
+            font-weight: 600;
+            font-family: var(--font-heading);
+            letter-spacing: 0.03em;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            z-index: 10;
+        }
+        .project-card:not(.under-construction):hover::after {
+            opacity: 1;
+        }
+
+        .project-card.under-construction::after {
             content: "Under construction 🚧";
             position: absolute;
             top: 0;
@@ -58,7 +84,7 @@
             transition: opacity 0.3s ease;
             z-index: 10;
         }
-        .project-card:hover::after {
+        .project-card.under-construction:hover::after {
             opacity: 1;
         }
         .project-image {
@@ -167,10 +193,10 @@
                 <h1 class="section-title">All Projects</h1>
                 <div class="title-underline"></div>
                 <p class="section-desc" style="max-width: 700px;">A comprehensive look at my strategic data, analytics, and AI engineering projects. Click on any project to learn more.</p>
-
+ 
                 <div class="all-projects-grid">
                     <!-- Project 1 -->
-                    <a href="javascript:void(0)" class="project-card">
+                    <a href="javascript:void(0)" class="project-card under-construction">
                         <div class="project-image" style="background-image: url('https://images.unsplash.com/photo-1543286386-713bdd548da4?q=75&w=800&auto=format&fit=crop');"></div>
                         <div class="project-content">
                             <h3>Data Transformation Pipeline</h3>
@@ -180,7 +206,7 @@
                     </a>
 
                     <!-- Project 2 -->
-                    <a href="javascript:void(0)" class="project-card">
+                    <a href="javascript:void(0)" class="project-card under-construction">
                         <div class="project-image" style="background-image: url('https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=75&w=800&auto=format&fit=crop');"></div>
                         <div class="project-content">
                             <h3>Executive Interactive Dashboard</h3>
@@ -190,7 +216,7 @@
                     </a>
 
                     <!-- Project 3 -->
-                    <a href="javascript:void(0)" class="project-card">
+                    <a href="javascript:void(0)" class="project-card under-construction">
                         <div class="project-image" style="background-image: url('https://images.unsplash.com/photo-1526628953301-3e589a6a8b74?q=75&w=800&auto=format&fit=crop');"></div>
                         <div class="project-content">
                             <h3>Predictive ML Margin Model</h3>
@@ -200,7 +226,7 @@
                     </a>
 
                     <!-- Project 4 -->
-                    <a href="javascript:void(0)" class="project-card">
+                    <a href="javascript:void(0)" class="project-card under-construction">
                         <div class="project-image" style="background-image: url('https://images.unsplash.com/photo-1677442136019-21780ecad995?q=75&w=800&auto=format&fit=crop');"></div>
                         <div class="project-content">
                             <h3>Autonomous AI Agent</h3>
@@ -218,7 +244,7 @@
                 <h2 class="section-title">Articles & Insights</h2>
                 <div class="title-underline"></div>
                 <p class="section-desc" style="max-width: 700px;">Deep dives into data analytics, AI engineering, and strategic economics. Read my latest thoughts and technical guides on Medium.</p>
-
+ 
                 <div class="all-projects-grid">
                     <!-- Article 1 -->
                     <a href="../articles/your-brain-on-chatgpt.html" class="project-card">
@@ -231,17 +257,17 @@
                     </a>
 
                     <!-- Article 2 -->
-                    <a href="../articles/future-ai-agents.html" class="project-card">
-                        <div class="project-image" style="background-image: url('https://images.unsplash.com/photo-1499750310107-5fef28a66643?q=80&w=800&auto=format&fit=crop');"></div>
+                    <a href="../articles/the-talent-vs-luck.html" class="project-card">
+                        <div class="project-image" style="background-image: url('https://miro.medium.com/v2/resize:fit:700/0*xG6xITlAs2YoI4_l');"></div>
                         <div class="project-content">
-                            <h3>The Future of Autonomous AI Agents</h3>
-                            <p>How AI is moving from simple chat interfaces to autonomous problem-solvers, and what it means for enterprise productivity and strategy.</p>
-                            <div class="project-tags"><span>Medium</span><span>AI</span><span>Future Tech</span></div>
+                            <h3>The Talent vs Luck</h3>
+                            <p>Why the most talented people in your company probably aren't the most successful ones — exploring simulation science, randomness, and career outcomes.</p>
+                            <div class="project-tags"><span>Medium</span><span>Career Science</span><span>Economics</span></div>
                         </div>
                     </a>
 
                     <!-- Article 3 -->
-                    <a href="../articles/executive-dashboards.html" class="project-card">
+                    <a href="javascript:void(0)" class="project-card under-construction">
                         <div class="project-image" style="background-image: url('https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=800&auto=format&fit=crop');"></div>
                         <div class="project-content">
                             <h3>Designing Executive Dashboards that Drive Action</h3>
